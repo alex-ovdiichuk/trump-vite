@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import Image from "./Image";
+import { useSectionAnimation } from "@/hooks/useSectionAnimation";
+import { AnimationControls, motion } from "framer-motion";
 
 const items = [
   {
@@ -37,8 +39,10 @@ const items = [
 ];
 
 export const Section5 = () => {
+  const { ref, controls } = useSectionAnimation(0.2);
+
   return (
-    <div className="relative">
+    <div className="relative" ref={ref}>
       <div className="absolute inset-0">
         <Image
           src="/assets/section5-bg.png"
@@ -69,22 +73,42 @@ export const Section5 = () => {
         </div>
         <div className="flex flex-col gap-2.5 lg:gap-5">
           <div className="mx-auto w-full lg:w-fit">
-            <Item i={items[0]} />
+            <Item i={items[0]} controls={controls} order={0} />
           </div>
           <div className="flex justify-between flex-col lg:flex-row gap-2.5">
-            <Item i={items[1]} className="lg:ml-14" />
-            <Item i={items[2]} className="lg:mr-20" />
+            <Item
+              i={items[1]}
+              controls={controls}
+              order={1}
+              className="lg:ml-14"
+            />
+            <Item
+              i={items[2]}
+              controls={controls}
+              order={2}
+              className="lg:mr-20"
+            />
           </div>
           <div className="flex justify-between flex-col lg:flex-row gap-2.5">
-            <Item i={items[3]} />
-            <Item i={items[4]} />
+            <Item i={items[3]} controls={controls} order={3} />
+            <Item i={items[4]} controls={controls} order={4} />
           </div>
           <div className="flex justify-between flex-col lg:flex-row gap-2.5">
-            <Item i={items[5]} className="lg:ml-14" />
-            <Item i={items[6]} className="lg:mr-20 xl:mr-28" />
+            <Item
+              i={items[5]}
+              controls={controls}
+              order={5}
+              className="lg:ml-14"
+            />
+            <Item
+              i={items[6]}
+              controls={controls}
+              order={6}
+              className="lg:mr-20 xl:mr-28"
+            />
           </div>
           <div className="mx-auto w-full lg:w-fit">
-            <Item i={items[7]} />
+            <Item i={items[7]} controls={controls} order={7} />
           </div>
         </div>
       </section>
@@ -95,9 +119,18 @@ export const Section5 = () => {
 const Item: React.FC<{
   i: { text: string; icon: string };
   className?: string;
-}> = ({ i, className }) => {
+  controls: AnimationControls;
+  order: number;
+}> = ({ i, className, controls, order }) => {
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      animate={controls}
+      transition={{ duration: 0.6, delay: order * 0.2 }}
+      variants={{
+        visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
+        hidden: { opacity: 0, scale: 0, transform: "translateY(100%)" },
+      }}
       className={cn(
         "px-2 xl:px-4 py-3 xl:py-6 bg-white rounded-2xl justify-center items-center gap-4 inline-flex text-[#d12035] text-xs xl:text-lg font-normal w-full lg:w-auto",
         className
@@ -111,6 +144,6 @@ const Item: React.FC<{
         className="w-8 xl:w-12 h-8 xl:h-12"
       />
       {i.text}
-    </div>
+    </motion.div>
   );
 };

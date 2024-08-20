@@ -12,14 +12,7 @@ const Image: React.FC<CustomImageProps> = ({
   className,
   ...props
 }) => {
-  return (
-    <img
-      src={src}
-      alt={alt}
-      {...props}
-      className={`w-full h-full ${className}`}
-    />
-  );
+  return <img src={src} alt={alt} {...props} className={` ${className}`} />;
 };
 
 export default Image;

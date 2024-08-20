@@ -9,8 +9,12 @@ import {
   AccordionTrigger,
 } from "./ui/accordion";
 import { Button } from "./ui/button";
+import { useSectionAnimation } from "@/hooks/useSectionAnimation";
+import { motion } from "framer-motion";
 
 export const Section9 = () => {
+  const { ref, controls } = useSectionAnimation(0.2);
+
   const [openIndexes, setOpenIndexes] = useState<string[]>([]); // Индексы открытых вкладок
 
   const handleToggle = (index: string) => {
@@ -26,7 +30,7 @@ export const Section9 = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative" ref={ref}>
       <div className="absolute w-full h-[100vw] lg:h-[50vw]">
         <Image
           src="/assets/section9-bg.png"
@@ -36,43 +40,91 @@ export const Section9 = () => {
         />
       </div>
       <section className="container mx-auto pb-[200px] relative z-20">
-        <h2 className="text-white text-[40px] xl:text-[80px] font-normal mb-9">
+        <motion.h2
+          initial="hidden"
+          animate={controls}
+          transition={{ duration: 0.6, delay: 0 }}
+          variants={{
+            visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
+            hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
+          }}
+          className="text-white text-[40px] xl:text-[80px] font-normal mb-9"
+        >
           FAQ
-        </h2>
+        </motion.h2>
         <Accordion
           type="multiple"
           value={openIndexes}
           className="w-full flex flex-col gap-5 mb-12"
         >
-          <AccordionItem value="item-1">
-            <AccordionTrigger onClick={() => handleToggle("item-1")}>
-              What is Trump Coin?
-            </AccordionTrigger>
-            <AccordionContent>
-              It's easy! Join our Telegram, launch the game directly within
-              Telegram, and start earning USDTr.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger onClick={() => handleToggle("item-2")}>
-              How can I start playing Trump Coin?
-            </AccordionTrigger>
-            <AccordionContent>
-              It's easy! Join our Telegram, launch the game directly within
-              Telegram, and start earning USDTr.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger onClick={() => handleToggle("item-3")}>
-              What are USDTr tokens?
-            </AccordionTrigger>
-            <AccordionContent>
-              It's easy! Join our Telegram, launch the game directly within
-              Telegram, and start earning USDTr.
-            </AccordionContent>
-          </AccordionItem>
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            variants={{
+              visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
+              hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
+            }}
+          >
+            <AccordionItem value="item-1">
+              <AccordionTrigger onClick={() => handleToggle("item-1")}>
+                What is Trump Coin?
+              </AccordionTrigger>
+              <AccordionContent>
+                It's easy! Join our Telegram, launch the game directly within
+                Telegram, and start earning USDTr.
+              </AccordionContent>
+            </AccordionItem>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            variants={{
+              visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
+              hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
+            }}
+          >
+            <AccordionItem value="item-2">
+              <AccordionTrigger onClick={() => handleToggle("item-2")}>
+                How can I start playing Trump Coin?
+              </AccordionTrigger>
+              <AccordionContent>
+                It's easy! Join our Telegram, launch the game directly within
+                Telegram, and start earning USDTr.
+              </AccordionContent>
+            </AccordionItem>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            transition={{ duration: 0.6, delay: 0.9 }}
+            variants={{
+              visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
+              hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
+            }}
+          >
+            <AccordionItem value="item-3">
+              <AccordionTrigger onClick={() => handleToggle("item-3")}>
+                What are USDTr tokens?
+              </AccordionTrigger>
+              <AccordionContent>
+                It's easy! Join our Telegram, launch the game directly within
+                Telegram, and start earning USDTr.
+              </AccordionContent>
+            </AccordionItem>
+          </motion.div>
         </Accordion>
-        <div className="flex justify-center">
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          variants={{
+            visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
+            hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
+          }}
+          className="flex justify-center"
+        >
           <Button
             variant="blue"
             className="w-full lg:w-fit px-8 mx-auto"
@@ -80,7 +132,7 @@ export const Section9 = () => {
           >
             read all questions
           </Button>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

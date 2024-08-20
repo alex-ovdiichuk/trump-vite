@@ -1,4 +1,7 @@
+import { useSectionAnimation } from "@/hooks/useSectionAnimation";
 import Image from "./Image";
+import { AnimationControls, motion } from "framer-motion";
+import { Section6Second } from "./Section6Second";
 
 const items = [
   {
@@ -23,16 +26,9 @@ const items = [
   },
 ];
 
-const tokenomics = [
-  "30% presale",
-  "30% airdrop / game reward",
-  "5% KOLs round",
-  "15 % marketing / treasury",
-  "15% liquidity cex/dex MM",
-  "5% team",
-];
-
 export const Section6 = () => {
+  const { ref, controls } = useSectionAnimation(0.2);
+
   return (
     <div className="relative">
       <div className="absolute inset-0">
@@ -43,65 +39,82 @@ export const Section6 = () => {
           className="object-cover object-top"
         />
       </div>
-      <section className="relative z-20 container mx-auto py-[106px] flex flex-col-reverse lg:flex-row justify-between">
+      <section
+        className="relative z-20 container mx-auto py-[106px] flex flex-col-reverse lg:flex-row justify-between"
+        ref={ref}
+      >
         <div>
-          <h2 className="hidden lg:block text-center lg:text-left text-white text-[40px] xl:text-[80px] font-normal mb-6 lg:mb-8">
+          <motion.h2
+            initial="hidden"
+            animate={controls}
+            transition={{ duration: 0.6, delay: 0 }}
+            variants={{
+              visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
+              hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
+            }}
+            className="hidden lg:block text-center lg:text-left text-white text-[40px] xl:text-[80px] font-normal mb-6 lg:mb-8"
+          >
             TF TOKEN
-          </h2>
+          </motion.h2>
           <ul className="flex flex-col gap-4">
-            {items.map((i) => (
-              <Item i={i} key={i.text} />
+            {items.map((i, idx) => (
+              <Item i={i} key={i.text} controls={controls} idx={idx} />
             ))}
           </ul>
         </div>
 
-        <div className="w-[343px] h-[374px] mx-auto lg:h-auto lg:w-3/5 relative mb-6 lg:mb-0">
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          transition={{ duration: 1, delay: 1.2 }}
+          variants={{
+            visible: { opacity: 1, scale: 1, transform: "translateX(0)" },
+            hidden: { opacity: 0, scale: 0, transform: "translateX(50%)" },
+          }}
+          className="w-[343px] h-[374px] mx-auto lg:h-auto lg:w-3/5 relative mb-6 lg:mb-0"
+        >
           <Image
             src="/assets/section6-img.png"
             fill
             alt=""
             className="object-contain object-right"
           />
-        </div>
+        </motion.div>
 
-        <h2 className="block lg:hidden text-center lg:text-left text-white text-[40px] xl:text-[80px] font-normal mb-6 lg:mb-8">
+        <motion.h2
+          initial="hidden"
+          animate={controls}
+          transition={{ duration: 0.6, delay: 0 }}
+          variants={{
+            visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
+            hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
+          }}
+          className="block lg:hidden text-center lg:text-left text-white text-[40px] xl:text-[80px] font-normal mb-6 lg:mb-8"
+        >
           TF TOKEN
-        </h2>
+        </motion.h2>
       </section>
-      <section className="relative z-20 container mx-auto flex flex-col lg:flex-row pt-0 lg:pt-10 xl:pt-[154px]">
-        <div className="w-full lg:w-1/2">
-          <h2 className="text-[#d12035] text-[40px] xl:text-[80px] font-normal mb-5">
-            Tokenomics
-          </h2>
-          <ul className="space-y-5 mb-6 lg:mb-0">
-            {tokenomics.map((i) => (
-              <li
-                key={i}
-                className="text-white text-lg lg:text-2xl font-normal"
-              >
-                {i}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="w-[343px] h-[225px] lg:h-auto lg:w-1/2 mx-auto relative">
-          <Image
-            src="/assets/tokenomics.png"
-            fill
-            alt=""
-            className="object-contain object-right"
-          />
-        </div>
-      </section>
+      <Section6Second />
     </div>
   );
 };
 
 const Item: React.FC<{
   i: { text: string; icon: string };
-}> = ({ i }) => {
+  controls: AnimationControls;
+  idx: number;
+}> = ({ i, controls, idx }) => {
   return (
-    <div className="px-2 xl:px-4 py-3 xl:py-6 bg-white rounded-2xl justify-center items-center gap-4 inline-flex text-[#d12035] text-xs xl:text-lg font-normal w-full lg:w-fit">
+    <motion.div
+      initial="hidden"
+      animate={controls}
+      transition={{ duration: 0.6, delay: idx * 0.2 + 0.6 }}
+      variants={{
+        visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
+        hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
+      }}
+      className="px-2 xl:px-4 py-3 xl:py-6 bg-white rounded-2xl justify-center items-center gap-4 inline-flex text-[#d12035] text-xs xl:text-lg font-normal w-full lg:w-fit"
+    >
       <Image
         src={i.icon}
         width={48}
@@ -110,6 +123,6 @@ const Item: React.FC<{
         className="w-8 xl:w-12 h-8 xl:h-12"
       />
       {i.text}
-    </div>
+    </motion.div>
   );
 };
