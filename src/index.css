@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Red October";
+  src: url("/fonts/red-october-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-red-october: "Red October", sans-serif;
+  --font-manrope: "Manrope", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#21222d] font-red-october  max-w-[100vw];
+  }
+
+  .pink-gradient {
+    background: linear-gradient(90deg, #ed3e59 0%, #ff7a8e 50%, #ed3e59 100%);
+  }
+
+  .blue-gradient {
+    background: linear-gradient(90deg, #007aff 0%, #3e8de1 50%, #007aff 100%);
+  }
+
+  .translate-500 {
+    transform: translateX(500px);
+  }
+}
