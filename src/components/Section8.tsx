@@ -109,7 +109,7 @@ export const Section8 = () => {
               visible: { opacity: 1, scale: 1, transform: "translateX(0)" },
               hidden: { opacity: 0, scale: 0, transform: "translateX(100%)" },
             }}
-            href={config.social.x}
+            href={config.social.telegram}
             className={cn(
               buttonVariants({ variant: "blue", size: "none" }),
               "mb-6 w-full lg:mb-36 order-3 lg:w-[25%]"

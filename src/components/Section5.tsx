@@ -132,7 +132,7 @@ const Item: React.FC<{
         hidden: { opacity: 0, scale: 0, transform: "translateY(100%)" },
       }}
       className={cn(
-        "px-2 xl:px-4 py-3 xl:py-6 bg-white rounded-2xl justify-center items-center gap-4 inline-flex text-[#d12035] text-xs xl:text-lg font-normal w-full lg:w-auto",
+        "px-3 xl:px-4 py-3 xl:py-6 bg-white rounded-2xl justify-start lg:justify-center  items-center gap-4 inline-flex text-[#d12035] text-xs xl:text-lg font-normal w-full lg:w-auto",
         className
       )}
     >

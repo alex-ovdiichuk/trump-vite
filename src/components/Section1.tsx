@@ -115,7 +115,7 @@ export const Section1 = () => {
         >
           <div className="relative lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 w-full lg:w-[400px] xl:w-[750px] h-auto lg:h-[400px] xl:h-[800px]">
             <Image
-              src="/assets/trump.png"
+              src="/assets/trump.webp"
               sizes="50wv"
               width={812}
               height={833}
