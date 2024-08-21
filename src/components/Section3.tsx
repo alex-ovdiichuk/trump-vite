@@ -8,7 +8,7 @@ export const Section3 = () => {
   const { ref, controls } = useSectionAnimation(0.2);
 
   return (
-    <div className="relative" ref={ref}>
+    <div className="relative" ref={ref} id="trump-farm">
       <div className="absolute inset-0">
         <Image
           src="/assets/section3-bg.png"

@@ -8,7 +8,11 @@ export const Section2 = () => {
   const { ref, controls } = useSectionAnimation(0.2);
 
   return (
-    <div className="pt-[62px] pb-16 lg:pb-[200px] relative" ref={ref}>
+    <div
+      className="pt-[62px] pb-16 lg:pb-[200px] relative"
+      ref={ref}
+      id="about-us"
+    >
       <div className="absolute inset-0">
         <Image
           src="/assets/section2-bg.png"

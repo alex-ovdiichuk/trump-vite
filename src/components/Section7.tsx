@@ -20,7 +20,7 @@ export const Section7 = () => {
   const { ref, controls } = useSectionAnimation(0.2);
 
   return (
-    <div className="relative" ref={ref}>
+    <div className="relative" ref={ref} id="roadmap">
       <div className="absolute inset-0">
         <Image
           src="/assets/section7-bg.png"

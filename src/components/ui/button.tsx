@@ -5,17 +5,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "text-white text-2xl uppercase text-center rounded-xl shadow shadow-inner border-2 border-[#ff2f48]",
+  "text-white text-2xl uppercase text-center rounded-xl shadow shadow-inner border-b-4 border-[#9a1d2c]",
   {
     variants: {
       variant: {
         default: "pink-gradient",
-        blue: "blue-gradient border-[#007aff]",
+        blue: "blue-gradient border-[#164578]",
       },
       size: {
         default: "w-full py-8",
         sm: "h-9 rounded-md px-3",
         lg: "w-full lg:w-fit py-8 px-[100px] xl:px-[140px]",
+        none: "",
         icon: "h-10 w-10",
       },
     },

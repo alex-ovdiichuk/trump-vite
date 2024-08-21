@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import Image from "./Image";
 import { useSectionAnimation } from "../hooks/useSectionAnimation";
+import { cn } from "@/lib/utils";
 
 export const Section1 = () => {
   const { ref, controls } = useSectionAnimation(0.2);
@@ -81,7 +82,8 @@ export const Section1 = () => {
             Community-driven project by dedicated crypto and Trump fans built on
             the TON Ecosystem
           </motion.p>
-          <motion.div
+
+          <motion.a
             initial="hidden"
             animate={controls}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -89,9 +91,16 @@ export const Section1 = () => {
               visible: { opacity: 1, scale: 1, transform: "translateX(0)" },
               hidden: { opacity: 0, scale: 0, transform: "translateX(-50%)" },
             }}
+            href="#join"
+            className={cn(
+              buttonVariants({ variant: "default", size: "none" }),
+              "block w-full lg:w-fit"
+            )}
           >
-            <Button size="lg">lets go!</Button>
-          </motion.div>
+            <div className="w-full lg:w-fit py-8 px-[100px] xl:px-[140px] border-2 border-[#ff2f48] rounded-2xl">
+              lets go!
+            </div>
+          </motion.a>
         </div>
 
         <motion.div

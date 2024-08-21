@@ -92,7 +92,13 @@ const Card: React.FC<{
   rotation: string[];
 }> = ({ img, idx, text, rotation }) => {
   return (
-    <div className="lg:-mt-4 flex flex-col items-center">
+    <div
+      className={cn(
+        "lg:-mt-4 flex flex-col items-center",
+        idx === 0 ? "lg:-translate-y-2" : "",
+        idx === 2 ? "lg:-translate-y-6" : ""
+      )}
+    >
       <motion.div
         animate={{
           rotate: rotation,
@@ -103,10 +109,7 @@ const Card: React.FC<{
           repeatType: "mirror",
           ease: "easeInOut",
         }}
-        className={cn(
-          "h-[330px] w-[300px] relative origin-top",
-          idx === 0 || idx === 2 ? "lg:-translate-y-4" : ""
-        )}
+        className="h-[330px] w-[300px] relative origin-top"
       >
         <Image src={img} fill alt="" className="object-contain object-center" />
       </motion.div>

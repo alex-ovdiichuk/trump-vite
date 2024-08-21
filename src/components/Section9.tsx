@@ -129,8 +129,11 @@ export const Section9 = () => {
             variant="blue"
             className="w-full lg:w-fit px-8 mx-auto"
             onClick={openAll}
+            size="none"
           >
-            read all questions
+            <div className="w-full py-8 lg:py-4 xl:py-8 border-2 border-[#007aff] rounded-2xl">
+              read all questions
+            </div>
           </Button>
         </motion.div>
       </section>

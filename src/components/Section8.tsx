@@ -9,15 +9,36 @@ export const Section8 = () => {
   const { ref, controls } = useSectionAnimation(0.2);
 
   return (
-    <div className="relative" ref={ref}>
-      <div className="absolute inset-0">
+    <div className="relative" ref={ref} id="join">
+      <motion.div
+        initial={{
+          transform: "translate(0, 0)",
+        }}
+        animate={{
+          transform: [
+            "translate(32px, 24px)",
+            "translate(-32px, -24px)",
+            "translate(32px, -24px)",
+            "translate(-32px, 24px)",
+            "translate(0, 0)",
+          ],
+        }}
+        transition={{
+          duration: 4,
+          times: [0, 0.25, 0.5, 0.75, 1],
+          repeat: Infinity,
+          ease: "easeInOut",
+          repeatType: "reverse",
+        }}
+        className="absolute -inset-8"
+      >
         <Image
           src="/assets/section8-bg.png"
           fill
           alt=""
           className="object-cover object-bottom"
         />
-      </div>
+      </motion.div>
       <section className="container mx-auto relative z-20 pt-3 pb-12">
         <motion.h2
           initial="hidden"
@@ -55,11 +76,13 @@ export const Section8 = () => {
             }}
             href={config.social.x}
             className={cn(
-              buttonVariants({ variant: "default", size: "default" }),
-              "mb-6 lg:w-[25%] lg:mb-36 order-2 lg:order-1"
+              buttonVariants({ variant: "default", size: "none" }),
+              "mb-6 w-full lg:w-[25%] lg:mb-36 order-2 lg:order-1"
             )}
           >
-            X/Twitter
+            <div className="w-full py-8 lg:py-4 xl:py-8 border-2 border-[#ff2f48] rounded-2xl">
+              X/Twitter
+            </div>
           </motion.a>
           <motion.div
             initial="hidden"
@@ -69,7 +92,7 @@ export const Section8 = () => {
               visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
               hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
             }}
-            className="w-full lg:w-1/2 h-[553px] xl:h-[700px] relative order-1 lg:order-2 mb-6 lg:mb-0"
+            className="w-full lg:w-2/5 h-[553px] xl:h-[700px] relative order-1 lg:order-2 mb-6 lg:mb-0"
           >
             <Image
               src="/assets/section8-img.png"
@@ -88,11 +111,13 @@ export const Section8 = () => {
             }}
             href={config.social.x}
             className={cn(
-              buttonVariants({ variant: "blue", size: "default" }),
-              "mb-6 lg:mb-36 order-3 lg:w-[25%]"
+              buttonVariants({ variant: "blue", size: "none" }),
+              "mb-6 w-full lg:mb-36 order-3 lg:w-[25%]"
             )}
           >
-            Telegram
+            <div className="w-full py-8 lg:py-4 xl:py-8 border-2 border-[#007aff] rounded-2xl">
+              Telegram
+            </div>
           </motion.a>
         </div>
       </section>

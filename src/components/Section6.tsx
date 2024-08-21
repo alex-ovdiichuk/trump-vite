@@ -30,7 +30,7 @@ export const Section6 = () => {
   const { ref, controls } = useSectionAnimation(0.2);
 
   return (
-    <div className="relative">
+    <div className="relative" id="tf-token">
       <div className="absolute inset-0">
         <Image
           src="/assets/section6-bg.png"
@@ -39,6 +39,54 @@ export const Section6 = () => {
           className="object-cover object-top"
         />
       </div>
+      <motion.div
+        initial={{
+          scale: 0,
+          opacity: 0,
+        }}
+        animate={{
+          scale: [0, 2, 2, 0],
+          opacity: [0, 1, 1, 0],
+        }}
+        transition={{
+          duration: 2,
+          times: [0, 0.8, 0.99, 1],
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="w-[150px] h-[150px] lg:w-[250px] lg:h-[250px] xl:w-[400px] xl:h-[400px] absolute top-48 lg:top-0 right-0 origin-right"
+      >
+        <Image
+          src="/assets/salut-right.png"
+          fill
+          alt=""
+          className="object-contain object-right"
+        />
+      </motion.div>
+      <motion.div
+        initial={{
+          scale: 0,
+          opacity: 0,
+        }}
+        animate={{
+          scale: [0, 0.5, 1, 0],
+          opacity: [0, 1, 1, 0],
+        }}
+        transition={{
+          duration: 2,
+          times: [0, 0.8, 0.99, 1],
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="w-[150px] h-[150px] lg:w-[250px] lg:h-[250px] xl:w-[400px] xl:h-[400px] absolute bottom-0 top-48 lg:top-auto lg:bottom-1/3 left-0 origin-left"
+      >
+        <Image
+          src="/assets/salut-left.png"
+          fill
+          alt=""
+          className="object-contain object-left"
+        />
+      </motion.div>
       <section
         className="relative z-20 container mx-auto py-[106px] flex flex-col-reverse lg:flex-row justify-between"
         ref={ref}

@@ -15,6 +15,10 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply bg-[#21222d] font-red-october  max-w-[100vw];
   }
