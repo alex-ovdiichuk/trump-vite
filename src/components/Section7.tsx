@@ -110,7 +110,7 @@ export const Section7 = () => {
               }}
               className="w-3/5 lg:w-[347px] h-[300px] lg:h-[242px] relative lg:absolute right-0 top-0"
             >
-              <div className="lg:-translate-y-full xl:-translate-x-1/2">
+              <div className="lg:-translate-y-full h-full xl:-translate-x-1/2">
                 <Image
                   src="/assets/section7-trump.png"
                   fill
