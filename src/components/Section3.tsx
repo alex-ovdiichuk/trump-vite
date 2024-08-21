@@ -56,7 +56,7 @@ export const Section3 = () => {
               className="relative h-[220px] lg:h-full"
             >
               <Image
-                src="/assets/section3-img2.png"
+                src="/assets/section3-img.gif"
                 fill
                 alt=""
                 className="object-contain object-center"

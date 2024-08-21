@@ -121,6 +121,30 @@ export const Section6 = () => {
           }}
           className="w-[343px] h-[374px] mx-auto lg:h-auto lg:w-3/5 relative mb-6 lg:mb-0"
         >
+          <motion.div
+            initial={{
+              scale: 0,
+              opacity: 0,
+            }}
+            animate={{
+              scale: [0, 1],
+              opacity: [0, 1],
+            }}
+            transition={{
+              duration: 2,
+              times: [0, 1],
+              repeat: Infinity,
+              ease: "easeInOut",
+              repeatType: "reverse",
+            }}
+            className="absolute top-20 -left-8 lg:top-5 lg:left-4 xl:top-24 xl:left-14 z-10"
+          >
+            <Image
+              src="/assets/glare.png"
+              alt=""
+              className="w-32 h-32 lg:w-auto lg:h-auto"
+            />
+          </motion.div>
           <Image
             src="/assets/section6-img.png"
             fill
