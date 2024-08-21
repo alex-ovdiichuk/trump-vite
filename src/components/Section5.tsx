@@ -52,7 +52,7 @@ export const Section5 = () => {
         />
       </div>
       <section className="container mx-auto relative z-30">
-        <h2 className="text-center text-white text-[40px] xl:text-[80px] font-normal mb-6 lg:mb-20">
+        <h2 className="text-center text-white text-[40px] xl:text-[80px] font-normal mb-6 lg:mb-20 uppercase">
           Main features
         </h2>
         <div className="hidden lg:block absolute inset-20 translate-y-20 -translate-x-8">
@@ -132,7 +132,7 @@ const Item: React.FC<{
         hidden: { opacity: 0, scale: 0, transform: "translateY(100%)" },
       }}
       className={cn(
-        "px-3 xl:px-4 py-3 xl:py-6 bg-white rounded-2xl justify-start lg:justify-center  items-center gap-4 inline-flex text-[#d12035] text-xs xl:text-lg font-normal w-full lg:w-auto",
+        "px-3 xl:px-4 py-3 xl:py-6 bg-white rounded-2xl justify-start lg:justify-center  items-center gap-4 inline-flex text-[#d12035] text-xs xl:text-lg font-normal w-full lg:w-auto uppercase",
         className
       )}
     >

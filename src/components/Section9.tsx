@@ -91,7 +91,10 @@ export const Section9 = () => {
               }}
             >
               <AccordionItem value={i.q}>
-                <AccordionTrigger onClick={() => handleToggle(i.q)}>
+                <AccordionTrigger
+                  onClick={() => handleToggle(i.q)}
+                  className="uppercase"
+                >
                   {i.q}
                 </AccordionTrigger>
                 <AccordionContent>{i.a}</AccordionContent>

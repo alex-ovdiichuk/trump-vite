@@ -65,7 +65,7 @@ export const Section1 = () => {
               visible: { opacity: 1, scale: 1, transform: "translateX(0)" },
               hidden: { opacity: 0, scale: 0, transform: "translateX(-50%)" },
             }}
-            className="text-white text-[40px] xl:text-[80px] leading-tight lg:leading-none mb-4"
+            className="text-white text-[40px] xl:text-[80px] leading-tight lg:leading-none mb-4 uppercase"
           >
             Make America Great Again!
           </motion.h2>

@@ -48,7 +48,7 @@ export const Section8 = () => {
             visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
             hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
           }}
-          className="text-white text-[40px] xl:text-[80px] text-left lg:text-center font-normal mb-3"
+          className="text-white text-[40px] xl:text-[80px] text-left lg:text-center font-normal mb-3 uppercase"
         >
           Join our community
         </motion.h2>

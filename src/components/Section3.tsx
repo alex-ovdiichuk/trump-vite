@@ -26,7 +26,7 @@ export const Section3 = () => {
             visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
             hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
           }}
-          className="text-white text-[40px] xl:text-[80px] font-normal"
+          className="text-white text-[40px] xl:text-[80px] font-normal uppercase"
         >
           What is Trump Farm?
         </motion.h2>

@@ -28,7 +28,7 @@ export const Section6Second = () => {
             visible: { opacity: 1, scale: 1, transform: "translateY(0)" },
             hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
           }}
-          className="text-[#d12035] text-[40px] xl:text-[80px] font-normal mb-5"
+          className="text-[#d12035] text-[40px] xl:text-[80px] font-normal mb-5 uppercase"
         >
           Tokenomics
         </motion.h2>
@@ -43,7 +43,7 @@ export const Section6Second = () => {
                 hidden: { opacity: 0, scale: 0, transform: "translateY(50%)" },
               }}
               key={i}
-              className="text-white text-lg lg:text-2xl font-normal"
+              className="text-white text-lg lg:text-2xl font-normal uppercase"
             >
               {i}
             </motion.li>

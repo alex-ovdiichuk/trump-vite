@@ -78,7 +78,7 @@ export const Header = () => {
             <Image src="/assets/social/tg.svg" fill alt="Telegram" />
           </a>
         </div>
-        <div className="text-white text-base xl:text-xl">
+        <div className="text-white text-base xl:text-xl uppercase">
           Join our community
         </div>
       </div>
