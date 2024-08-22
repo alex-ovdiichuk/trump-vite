@@ -29,7 +29,7 @@ export const Section1 = () => {
           visible: { transform: "translateX(0)" },
           hidden: { transform: "translateX(-100%)" },
         }}
-        className="w-[280px] h-[280px] absolute bottom-0 -left-36 xl:left-0 z-20"
+        className="w-[180px] h-[180px] lg:w-[280px] lg:h-[280px] absolute bottom-[5%] lg:bottom-0 -left-20 lg:-left-36 xl:left-0 z-20"
       >
         <Image
           src="/assets/fireworks-left.png"
@@ -115,7 +115,7 @@ export const Section1 = () => {
         >
           <div className="relative lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 w-full lg:w-[400px] xl:w-[750px] h-auto lg:h-[400px] xl:h-[800px]">
             <Image
-              src="/assets/trump.webp"
+              src="/assets/trump.png"
               sizes="50wv"
               width={812}
               height={833}
