@@ -43,7 +43,7 @@ export const Section7 = () => {
           Roadmap
         </motion.h2>
         <div className="relative">
-          <ul className="flex flex-col gap-6 lg:gap-2 ml-0 lg:ml-48 w-fit mb-8 lg:mb-0">
+          <ul className="flex flex-col-reverse lg:flex-col gap-6 lg:gap-2 ml-0 lg:ml-48 w-fit mb-8 lg:mb-0">
             {items.map((i, idx) => (
               <li
                 key={idx}
